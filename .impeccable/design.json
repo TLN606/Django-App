@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T00:00:00Z",
+  "title": "Design System: FoodNow",
+  "extensions": {
+    "colorMeta": {
+      "porcelain": { "role": "neutral", "displayName": "Sứ trắng lạnh", "canonical": "#F4F6F8", "tonalRamp": ["#1B1D1F", "#383C40", "#555B61", "#7A8189", "#A0A7AE", "#C3C9CF", "#E1E5E9", "#F4F6F8"] },
+      "white": { "role": "neutral", "displayName": "Trắng men", "canonical": "#FFFFFF", "tonalRamp": ["#222222", "#444444", "#666666", "#888888", "#AAAAAA", "#CCCCCC", "#EEEEEE", "#FFFFFF"] },
+      "mist": { "role": "neutral", "displayName": "Sương chàm", "canonical": "#E4EAF6", "tonalRamp": ["#14213F", "#2A3F73", "#4560A6", "#6B84C4", "#93A6D6", "#B8C5E4", "#D3DCF0", "#E4EAF6"] },
+      "cobalt": { "role": "primary", "displayName": "Chàm hoa lam", "canonical": "#1C3C8C", "tonalRamp": ["#0B1838", "#122659", "#1C3C8C", "#3558B0", "#5A78C8", "#8399DA", "#B1BFEA", "#DDE4F6"] },
+      "ink": { "role": "neutral", "displayName": "Mực chàm", "canonical": "#0F1F4D", "tonalRamp": ["#060C20", "#0F1F4D", "#1A3178", "#2B479E", "#5069B8", "#7F93D0", "#B3BFE6", "#E1E6F5"] },
+      "chili": { "role": "secondary", "displayName": "Đỏ ớt", "canonical": "#D0102A", "tonalRamp": ["#3A0610", "#5E0A19", "#8A0C22", "#A80D22", "#D0102A", "#E8465A", "#F28E9B", "#FAD3D8"] },
+      "chili-deep": { "role": "secondary", "displayName": "Đỏ ớt đậm (hover)", "canonical": "#A80D22", "tonalRamp": ["#3A0610", "#5E0A19", "#7C0B1F", "#A80D22", "#D0102A", "#E8465A", "#F28E9B", "#FAD3D8"] },
+      "on-cobalt-soft": { "role": "neutral", "displayName": "Chàm nhạt trên nền chàm", "canonical": "#C9D4F0", "tonalRamp": ["#2E3F6E", "#475C98", "#6580BE", "#87A0D6", "#A5B8E4", "#C9D4F0", "#DCE3F6", "#EEF1FA"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "h1 hero và tên quán ở chân trang." },
+      "headline": { "displayName": "Headline", "purpose": "h2 danh mục, h1 trang tài khoản." },
+      "title": { "displayName": "Title", "purpose": "Tên món." },
+      "price": { "displayName": "Price", "purpose": "Giá món, màu chili." },
+      "lead": { "displayName": "Lead", "purpose": "Câu bổ nghĩa hero." },
+      "body": { "displayName": "Body", "purpose": "Chữ thân và mô tả món." },
+      "label": { "displayName": "Label", "purpose": "Liên kết thanh điều hướng." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Easing duy nhất cho nút, dòng món, rise và reveal." },
+      { "name": "rise", "value": "0.8s ease-out, trễ 0.08s và 0.16s", "purpose": "Hero h1, câu bổ nghĩa, nút vào trang." },
+      { "name": "drift", "value": "7s ease-in-out infinite alternate", "purpose": "Tô hero trôi nhẹ." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "520px" },
+      { "name": "menu-split", "value": "700px" },
+      { "name": "hero-split", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Nút hành động chính, tròn như miệng tô.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Xem thực đơn</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; background: #D0102A; color: #fff; font: 600 1.0625rem/1 'Be Vietnam Pro', system-ui, sans-serif; text-decoration: none; border-radius: 999px; transition: transform .25s cubic-bezier(.16,1,.3,1), background-color .25s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: #A80D22; } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 3px solid #D0102A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Cobalt Button",
+      "kind": "button",
+      "refersTo": "button-cobalt",
+      "description": "Nút phụ nền chàm.",
+      "html": "<a class=\"ds-btn-cobalt\" href=\"#\">Quay lại</a>",
+      "css": ".ds-btn-cobalt { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; background: #1C3C8C; color: #fff; font: 600 1.0625rem/1 'Be Vietnam Pro', system-ui, sans-serif; text-decoration: none; border-radius: 999px; transition: background-color .25s cubic-bezier(.16,1,.3,1); } .ds-btn-cobalt:hover { background: #0F1F4D; } .ds-btn-cobalt:focus-visible { outline: 3px solid #D0102A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Thanh chàm đặc, tên quán trái, liên kết phải.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">FoodNow</a><ul><li><a href=\"#\">Đăng nhập</a></li><li><a href=\"#\">Đăng ký</a></li></ul></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; min-height: 68px; padding: 0 24px; background: #1C3C8C; color: #fff; } .ds-brand { font: 800 1.5rem/1 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -.03em; color: #fff; text-decoration: none; } .ds-nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; } .ds-nav a:not(.ds-brand) { color: #fff; font: 600 .9375rem/1 'Be Vietnam Pro', system-ui, sans-serif; text-decoration: none; padding: 10px 4px; } .ds-nav a:not(.ds-brand):hover { text-decoration: underline; text-underline-offset: .35em; }"
+    },
+    {
+      "name": "Dish Row",
+      "kind": "custom",
+      "refersTo": "typography.price",
+      "description": "Dòng món không thẻ: tên, giá chili, mô tả; hover dịch phải 8px.",
+      "html": "<div class=\"ds-dish\"><h3>Cơm gà xối mỡ</h3><span class=\"ds-price\">45.000đ</span><p>Gà giòn, cơm nóng, kèm canh.</p></div>",
+      "css": ".ds-dish { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; align-items: baseline; padding-block: 20px; color: #0F1F4D; transition: transform .3s cubic-bezier(.16,1,.3,1); } .ds-dish:hover { transform: translateX(8px); } .ds-dish h3 { margin: 0; font: 600 1.375rem/1.25 'Be Vietnam Pro', system-ui, sans-serif; letter-spacing: -.01em; } .ds-dish p { grid-column: 1; margin: 0; color: #1C3C8C; max-width: 52ch; } .ds-price { grid-column: 2; grid-row: 1; font: 800 1.75rem/1 'Bricolage Grotesque', system-ui, sans-serif; color: #D0102A; letter-spacing: -.02em; white-space: nowrap; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Ô nhập trắng không viền, bo 12px, focus bằng vòng chàm.",
+      "html": "<label class=\"ds-label\">Tên đăng nhập<input class=\"ds-input\" type=\"text\"></label>",
+      "css": ".ds-label { display: grid; gap: 6px; font: 600 1.0625rem 'Be Vietnam Pro', system-ui, sans-serif; color: #0F1F4D; } .ds-input { font: inherit; min-height: 52px; padding: 0 16px; color: #0F1F4D; background: #fff; border: 0; border-radius: 12px; outline: 3px solid transparent; transition: outline-color .2s cubic-bezier(.16,1,.3,1); } .ds-input:focus { outline-color: #1C3C8C; }"
+    },
+    {
+      "name": "Category Heading with Bowl",
+      "kind": "custom",
+      "refersTo": "typography.headline",
+      "description": "Tiêu đề danh mục chàm kèm hình tô SVG.",
+      "html": "<div class=\"ds-head\"><svg width=\"96\" height=\"80\" viewBox=\"0 0 240 200\" aria-hidden=\"true\"><path d=\"M20 92H220C220 148 176 184 120 184C64 184 20 148 20 92Z\" fill=\"#fff\" stroke=\"#1C3C8C\" stroke-width=\"6\" stroke-linejoin=\"round\"/><rect x=\"8\" y=\"80\" width=\"224\" height=\"18\" rx=\"9\" fill=\"#fff\" stroke=\"#1C3C8C\" stroke-width=\"6\"/></svg><h2>Bún - Phở</h2></div>",
+      "css": ".ds-head { display: flex; align-items: center; gap: 24px; padding: 24px; background: #E4EAF6; } .ds-head h2 { margin: 0; font: 800 2.5rem/1.02 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -.03em; color: #1C3C8C; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Tô sứ hoa lam",
+    "overview": "Thực đơn là chồng tô sứ men trắng vẽ chàm: nền sứ trắng ngả lạnh (porcelain), mảng chàm đặc (cobalt) phủ nguyên vùng lớn, chữ mực chàm tối (ink). Mỗi danh mục là một vùng nền riêng, không phải lưới thẻ; mỗi món là một dòng chữ có giá viết ngay bên phải. Hình minh họa là chiếc tô, ly vẽ bằng SVG nét chàm phẳng.",
+    "keyCharacteristics": [
+      "Hai mảng màu lớn: chàm đặc (đầu trang, thanh điều hướng, chân trang) xen kẽ sứ trắng và mist.",
+      "Đỏ ớt chỉ dành cho giá, nút hành động chính, lỗi và vòng focus.",
+      "Phẳng hoàn toàn: không bóng, không gradient, không viền mảnh.",
+      "Nút tròn hẳn như miệng tô; ô nhập bo 12px.",
+      "Hai font tự host (Bricolage Grotesque, Be Vietnam Pro) có bản tiếng Việt."
+    ],
+    "rules": [
+      { "name": "The One Chili Rule", "body": "Đỏ ớt chỉ đi với giá và hành động; không dùng làm nền vùng lớn hay trang trí.", "section": "colors" },
+      { "name": "The Cobalt Field Rule", "body": "Chàm xuất hiện như mảng đặc phủ cả vùng, không như đường viền hay nét kẻ.", "section": "colors" },
+      { "name": "The Heavy Headline Rule", "body": "Chỉ h1, h2, h3 hệ display dùng weight 800; mọi chữ còn lại dùng 400 hoặc 600.", "section": "typography" },
+      { "name": "The Flat Bowl Rule", "body": "Không bóng, không gradient, không viền mảnh; ranh giới là đổi màu nền.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do để giá luôn viết bằng Bricolage 800 màu chili, định dạng `12.000đ`.",
+      "Do dùng mảng nền đặc (cobalt, mist) để chia vùng thay vì đường kẻ.",
+      "Do vẽ minh họa món bằng nét chàm 6px trên men trắng, phẳng.",
+      "Do giữ vòng focus 3px, offset 3px trên mọi phần tử tương tác.",
+      "Do chạy mọi chuyển động qua `--ease-out` và tôn trọng reduced-motion."
+    ],
+    "donts": [
+      "Don't dùng chili làm nền vùng lớn hoặc cho chữ không phải giá, hành động, lỗi.",
+      "Don't thêm bóng, gradient, hoặc viền mảnh quanh thẻ; không dựng lưới thẻ món.",
+      "Don't thêm màu thứ hai ngoài họ chàm và chili.",
+      "Don't đặt weight 800 cho chữ thân hoặc nhãn."
+    ]
+  }
+}
