@@ -1,20 +1,39 @@
 {% extends 'base.html' %}
+{% load menu_extras %}
 {% block content %}
-<h1 class="h3 mb-3">Thực đơn</h1>
-<div class="row g-3">
-  {% for dish in dishes %}
-    <div class="col-6 col-md-4 col-lg-3">
-      <div class="card h-100">
-        {% if dish.image %}<img src="{{ dish.image.url }}" class="card-img-top" alt="{{ dish.name }}">{% endif %}
-        <div class="card-body">
-          <h2 class="h6 card-title">{{ dish.name }}</h2>
-          <p class="text-muted small mb-1">{{ dish.category }}</p>
-          <p class="fw-bold mb-0">{{ dish.price|floatformat:0 }}đ</p>
-        </div>
-      </div>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Đặt bữa trưa trong một phút</h1>
+      <p>Cơm, bún, phở, ăn vặt và đồ uống, giá niêm yết sẵn.</p>
+      <a class="btn" href="#thuc-don">Xem thực đơn</a>
     </div>
+    <svg class="hero-bowl" viewBox="0 0 240 200" role="img" aria-label="Chiếc tô sứ vẽ cánh sen màu chàm"><use href="#bowl-com"/></svg>
+  </div>
+</section>
+
+<div id="thuc-don">
+  {% for category in categories %}
+    <section class="menu-section" aria-labelledby="cat-{{ category.pk }}">
+      <div class="wrap">
+        <div class="menu-head reveal">
+          <svg class="bowl" viewBox="0 0 240 200" aria-hidden="true"><use href="#bowl-{{ category.glyph }}"/></svg>
+          <h2 id="cat-{{ category.pk }}">{{ category.name }}</h2>
+        </div>
+        <ul class="dishes">
+          {% for dish in category.available_dishes %}
+            <li class="dish reveal">
+              {% if dish.image %}<img src="{{ dish.image.url }}" alt="{{ dish.name }}" loading="lazy">{% endif %}
+              <h3>{{ dish.name }}</h3>
+              <span class="price">{{ dish.price|vnd }}đ</span>
+              {% if dish.description %}<p>{{ dish.description }}</p>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
   {% empty %}
-    <p class="text-muted">Chưa có món nào. Thêm món trong trang admin.</p>
+    <div class="wrap"><p class="empty">Thực đơn đang được cập nhật. Bạn quay lại sau nhé.</p></div>
   {% endfor %}
 </div>
 {% endblock %}

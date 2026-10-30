@@ -4,3 +4,10 @@ __pycache__/
 db.sqlite3
 .env
 media/
+
+# Công cụ thiết kế (file tạm, không commit)
+.taste-skill/
+.impeccable/decision-payload.json
+.impeccable/brief-body.md
+.impeccable/questions/
+.impeccable/hook.cache.json
