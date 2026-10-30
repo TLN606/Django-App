@@ -45,7 +45,13 @@ python -c "from django.core.management.utils import get_random_secret_key as g; 
 
 ## Cấu trúc
 - `config/` — settings, urls của project
-- `core/` — app chính (thêm app mới: `python manage.py startapp <tên>` rồi khai báo trong `INSTALLED_APPS`)
+- `accounts/` — đăng ký, đăng nhập, hồ sơ
+- `menu/` — danh mục, món ăn, đánh giá (model `Category`, `Dish`, `Review`)
+- `orders/` — giỏ hàng, đơn hàng (model `Order`, `OrderItem`)
+- `core/` — app dùng chung
+- `templates/` — `base.html` và template từng app
+- Thêm app mới: `python manage.py startapp <tên>` rồi khai báo trong `INSTALLED_APPS`
+- Ảnh món ăn upload vào `media/` (không commit)
 
 ## Workflow nhóm
 Nhánh:
