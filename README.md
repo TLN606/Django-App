@@ -27,6 +27,7 @@ Chạy:
 ```bash
 python manage.py migrate
 python manage.py createsuperuser
+python manage.py seed_menu        # thêm món ăn mẫu (chạy lại không bị trùng)
 python manage.py runserver
 ```
 
